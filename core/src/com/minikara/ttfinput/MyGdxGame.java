@@ -18,12 +18,10 @@ import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScalingViewport;
 
 public class MyGdxGame extends ApplicationAdapter {
+	
 	Image img;
 	
-//	BitmapFont font12;
-	
 	protected Stage stage;
-
 	
 	private ScalingViewport viewport;
 	
@@ -34,7 +32,6 @@ public class MyGdxGame extends ApplicationAdapter {
 	public void create () {
 		
 		viewport = new ScalingViewport(Scaling.stretch, 320, 480);
-		//		ScalingViewport viewport = new ScalingViewport(Scaling.fit, w, h);
 		stage = new Stage(viewport);
 		Gdx.input.setInputProcessor(new InputMultiplexer(new InputProcessor(){
 
@@ -91,13 +88,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		img = new Image(new Texture(Gdx.files.internal("badlogic.jpg")));
 		
 		skin = new Skin(Gdx.files.internal("uiskin.json"));
-		
-//		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("lanting.ttf"));
-//		FreeTypeFontParameter parameter = new FreeTypeFontParameter();
-//		parameter.size = 90;
-//		parameter.characters = "���FONT";
-//		font12 = generator.generateFont(parameter); // font size 12 pixels
-//		generator.dispose(); // don't forget to dispose to avoid memory leaks!
+
 		
 		TextField tf = new TextField("hello, text", skin);
 		tf.setBounds(10, 200, 200, 40);
@@ -116,14 +107,12 @@ public class MyGdxGame extends ApplicationAdapter {
 		stage.act(Gdx.graphics.getDeltaTime());
 		stage.draw();
 		
-//		font12.draw(batch, "���GDXFONT", 22, 122);
 	}
 
 	@Override
 	public void dispose() {
 		skin.dispose();
 		stage.dispose();
-//		font12.dispose();
 		super.dispose();
 	}
 	
